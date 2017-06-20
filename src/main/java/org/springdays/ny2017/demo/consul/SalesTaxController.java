@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SalesTaxController {
 	
 	@Value("${taxrate}")
-	private Double raxRate;
+	private Double taxRate;
 
 	@RequestMapping("/tax/{price}")
 	public Double calculateTax(@PathVariable(value = "price") Double price ) {
-		return price * raxRate;
+		return price * taxRate;
 	}
 }
